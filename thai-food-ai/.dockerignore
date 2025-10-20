@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg
+*.egg-info/
+.venv/
+venv/
+ENV/
+
+# Testing
+test_*.py
+debug_*.py
+*.ipynb
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# ไฟล์ที่ไม่จำเป็น
+.git/
+.gitignore
+README.md
+
