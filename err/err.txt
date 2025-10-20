@@ -1,0 +1,991 @@
+2025-10-20T15:35:46.000000000Z [inf]  Starting Container
+2025-10-20T15:35:47.372071383Z [err]  [2025-10-20 15:35:46 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:35:47.372079692Z [err]  [2025-10-20 15:35:46 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:35:47.372088398Z [err]  [2025-10-20 15:35:46 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:35:47.372098208Z [err]  [2025-10-20 15:35:46 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:35:47.705768515Z [err]  2025-10-20 15:35:47.705085: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:35:47.709345497Z [err]  2025-10-20 15:35:47.708584: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:35:47.756590359Z [err]  2025-10-20 15:35:47.755255: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:35:47.756595116Z [err]  2025-10-20 15:35:47.755317: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:35:47.758911260Z [err]  2025-10-20 15:35:47.756994: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:35:47.767099415Z [err]  2025-10-20 15:35:47.765909: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:35:47.767107809Z [err]  2025-10-20 15:35:47.766236: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:35:47.767115370Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:35:49.295996513Z [err]  2025-10-20 15:35:48.860849: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:35:50.412145596Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:35:50.412157857Z [err]      self.load_wsgi()
+2025-10-20T15:35:50.412167532Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:35:50.412175814Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:35:50.412182610Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.412194911Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:35:50.412225243Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:35:50.412231916Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:35:50.412237921Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:35:50.412244098Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:35:50.412249575Z [err]      raise ValueError(
+2025-10-20T15:35:50.412270312Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:35:50.412278321Z [err]
+2025-10-20T15:35:50.412286670Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:35:50.412291765Z [err]
+2025-10-20T15:35:50.412297987Z [err]  Traceback (most recent call last):
+2025-10-20T15:35:50.412303793Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:35:50.412309682Z [err]      worker.init_process()
+2025-10-20T15:35:50.412324875Z [err]      self.callable = self.load()
+2025-10-20T15:35:50.412331597Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:35:50.412340083Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:35:50.412347501Z [err]      return self.load_wsgiapp()
+2025-10-20T15:35:50.412361951Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.412368224Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:35:50.412374488Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:35:50.412382653Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.412422090Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:35:50.412432598Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:35:50.412451872Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.412455538Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:35:50.412459504Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:35:50.412471016Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:35:50.412474415Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:35:50.412476634Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.412485622Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:35:50.412491769Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:35:50.412499849Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:35:50.412620517Z [err]  [2025-10-20 15:35:49 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:35:50.412629520Z [err]  Traceback (most recent call last):
+2025-10-20T15:35:50.412638441Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:35:50.412647400Z [err]      return cls(**config)
+2025-10-20T15:35:50.412696448Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:35:50.416232964Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:35:50.416243041Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:35:50.416248275Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416266217Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:35:50.416274089Z [err]      return saving_lib.load_model(
+2025-10-20T15:35:50.416280728Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416287197Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:35:50.416293135Z [err]      raise e
+2025-10-20T15:35:50.416298802Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:35:50.416305447Z [err]      model = deserialize_keras_object(
+2025-10-20T15:35:50.416311875Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416318151Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:35:50.416327034Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:35:50.416332858Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416339369Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:35:50.416345900Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:35:50.416352704Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416358714Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:35:50.416365935Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:35:50.416372567Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416528469Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:35:50.416534494Z [err]      return deserialize_keras_object(
+2025-10-20T15:35:50.416540347Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416549658Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:35:50.416557134Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:35:50.416564074Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:50.416569635Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:35:50.416575781Z [err]      raise TypeError(
+2025-10-20T15:35:50.416582023Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:35:50.416588693Z [err]
+2025-10-20T15:35:50.416595797Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:35:50.416605172Z [err]  [2025-10-20 15:35:49 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:35:51.381963935Z [err]  [2025-10-20 15:35:50 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:35:51.381975717Z [err]  [2025-10-20 15:35:50 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:35:51.381985802Z [err]  [2025-10-20 15:35:50 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:35:53.488757442Z [err]  [2025-10-20 15:35:53 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:35:53.488764126Z [err]  [2025-10-20 15:35:53 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:35:53.488768997Z [err]  [2025-10-20 15:35:53 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:35:53.488774068Z [err]  [2025-10-20 15:35:53 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:35:54.419304060Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:35:54.419372595Z [err]  2025-10-20 15:35:54.134732: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:35:54.419384451Z [err]  2025-10-20 15:35:54.134787: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:35:54.419397384Z [err]  2025-10-20 15:35:54.136529: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:35:54.419406563Z [err]  2025-10-20 15:35:54.146358: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:35:54.419415760Z [err]  2025-10-20 15:35:54.146690: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:35:54.419830408Z [err]  2025-10-20 15:35:54.084825: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:35:54.419836622Z [err]  2025-10-20 15:35:54.088193: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:35:55.440558357Z [err]  2025-10-20 15:35:55.342779: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:35:56.420404098Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:35:56.420421275Z [err]      return cls(**config)
+2025-10-20T15:35:56.420429843Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:35:56.420436904Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:35:56.420457895Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:35:56.420465053Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:35:56.420471153Z [err]      raise ValueError(
+2025-10-20T15:35:56.420477176Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:35:56.420483527Z [err]
+2025-10-20T15:35:56.420495723Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:35:56.420497810Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:35:56.420510726Z [err]      self.load_wsgi()
+2025-10-20T15:35:56.420514267Z [err]
+2025-10-20T15:35:56.420521501Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:35:56.420533315Z [err]  Traceback (most recent call last):
+2025-10-20T15:35:56.420541922Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:35:56.420546106Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:35:56.420553451Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.420562275Z [err]      worker.init_process()
+2025-10-20T15:35:56.420566144Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:35:56.420707435Z [err]  [2025-10-20 15:35:56 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:35:56.420714664Z [err]  Traceback (most recent call last):
+2025-10-20T15:35:56.423749076Z [err]      self.callable = self.load()
+2025-10-20T15:35:56.423757438Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:35:56.423763816Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:35:56.423770580Z [err]      return self.load_wsgiapp()
+2025-10-20T15:35:56.423778533Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.423785920Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:35:56.423792688Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:35:56.423799544Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.423812741Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:35:56.423823888Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:35:56.423831066Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.423838294Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:35:56.423850523Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:35:56.423866251Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.423873256Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:35:56.423882154Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:35:56.423888858Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:35:56.423895277Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:35:56.423901973Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:35:56.423908904Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:35:56.424797834Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:35:56.424808658Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:35:56.424816498Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.424823212Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:35:56.424830940Z [err]      return saving_lib.load_model(
+2025-10-20T15:35:56.424839300Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.424846564Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:35:56.424852978Z [err]      raise e
+2025-10-20T15:35:56.424859515Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:35:56.424866126Z [err]      model = deserialize_keras_object(
+2025-10-20T15:35:56.424872768Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.424880283Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:35:56.424887099Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:35:56.424893922Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.424902255Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:35:56.424909511Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:35:56.424916612Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.424924648Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:35:56.424935286Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:35:56.424942114Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.426086050Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:35:56.426093994Z [err]      return deserialize_keras_object(
+2025-10-20T15:35:56.426099354Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.426104127Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:35:56.426110710Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:35:56.426115184Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:35:56.426120967Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:35:56.426125677Z [err]      raise TypeError(
+2025-10-20T15:35:56.426130775Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:35:56.426135073Z [err]
+2025-10-20T15:35:56.426140444Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:35:56.426146692Z [err]  [2025-10-20 15:35:56 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:35:57.561274279Z [err]  [2025-10-20 15:35:57 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:35:57.561278654Z [err]  [2025-10-20 15:35:57 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:35:57.561283138Z [err]  [2025-10-20 15:35:57 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:04.660962204Z [err]  [2025-10-20 15:36:03 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:04.660966183Z [err]  [2025-10-20 15:36:03 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:04.660970412Z [err]  [2025-10-20 15:36:03 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:04.660975465Z [err]  [2025-10-20 15:36:03 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:04.660979719Z [err]  2025-10-20 15:36:04.640548: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:04.660985040Z [err]  2025-10-20 15:36:04.644082: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:04.696383090Z [err]  2025-10-20 15:36:04.693455: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:04.696393275Z [err]  2025-10-20 15:36:04.693543: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:04.699560071Z [err]  2025-10-20 15:36:04.696050: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:04.708777056Z [err]  2025-10-20 15:36:04.706789: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:04.708789228Z [err]  2025-10-20 15:36:04.707136: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:04.708796552Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:05.799640446Z [err]  2025-10-20 15:36:05.797248: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:06.732779341Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:06.732789691Z [err]
+2025-10-20T15:36:06.732792926Z [err]  [2025-10-20 15:36:06 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:06.732796835Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:06.732802329Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:06.732805121Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:06.732811404Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:06.732813686Z [err]      worker.init_process()
+2025-10-20T15:36:06.732819841Z [err]      return cls(**config)
+2025-10-20T15:36:06.732821827Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:06.732828028Z [err]      self.load_wsgi()
+2025-10-20T15:36:06.732833264Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:06.732838808Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:06.732841852Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:06.732845822Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:06.732849595Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:06.732852591Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.732857354Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:06.732860832Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:06.732866590Z [err]      raise ValueError(
+2025-10-20T15:36:06.732872406Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:06.732878674Z [err]
+2025-10-20T15:36:06.734172016Z [err]      self.callable = self.load()
+2025-10-20T15:36:06.734177418Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:06.734177433Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:06.734184716Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:06.734187499Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:06.734187626Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:06.734195340Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:06.734196588Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:06.734200934Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:06.734201471Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:06.734204916Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.734206219Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:06.734212858Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.734213233Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:06.734214833Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:06.734215397Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:06.734222427Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:06.734223785Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.734229775Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:06.734236861Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.735998373Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:06.736002842Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:06.736014078Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:06.736020914Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:06.736031332Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.736033967Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.736041855Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:06.736048377Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:06.736055978Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.736062327Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:06.736072333Z [err]      raise e
+2025-10-20T15:36:06.736078485Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:06.736083847Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:06.736090201Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.736094736Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:06.736099837Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:06.736104947Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.736110773Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:06.736116722Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:06.736125692Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.738359767Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:06.738371175Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:06.738379480Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.738388405Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:06.738396941Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:06.738406410Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:06.738418579Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:06.738432198Z [err]      raise TypeError(
+2025-10-20T15:36:06.738441049Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:06.738450482Z [err]
+2025-10-20T15:36:06.738459286Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:06.738466003Z [err]  [2025-10-20 15:36:06 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:07.538622528Z [err]  [2025-10-20 15:36:07 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:07.541345448Z [err]  [2025-10-20 15:36:07 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:07.541354959Z [err]  [2025-10-20 15:36:07 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:10.505106655Z [err]  [2025-10-20 15:36:10 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:10.505114101Z [err]  [2025-10-20 15:36:10 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:10.505120637Z [err]  [2025-10-20 15:36:10 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:10.505127062Z [err]  [2025-10-20 15:36:10 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:11.577087810Z [err]  2025-10-20 15:36:11.050156: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:11.577094939Z [err]  2025-10-20 15:36:11.053101: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:11.577103356Z [err]  2025-10-20 15:36:11.103656: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:11.577109516Z [err]  2025-10-20 15:36:11.103709: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:11.577114379Z [err]  2025-10-20 15:36:11.105608: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:11.577119428Z [err]  2025-10-20 15:36:11.115571: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:11.577124763Z [err]  2025-10-20 15:36:11.115961: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:11.577131598Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:12.531758556Z [err]  2025-10-20 15:36:12.194796: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:13.580554242Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.580565099Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:13.580565382Z [err]      raise ValueError(
+2025-10-20T15:36:13.580580030Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:13.580587157Z [err]
+2025-10-20T15:36:13.580593217Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:13.580599360Z [err]
+2025-10-20T15:36:13.580604165Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:13.580609270Z [err]      worker.init_process()
+2025-10-20T15:36:13.580613917Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:13.580618342Z [err]      self.load_wsgi()
+2025-10-20T15:36:13.580622718Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:13.580628293Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:13.580650442Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:13.580667183Z [err]      return cls(**config)
+2025-10-20T15:36:13.580674412Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:13.580682670Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:13.580688421Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:13.580694083Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:13.580768660Z [err]  [2025-10-20 15:36:13 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:13.580775912Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:13.580782992Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:13.586210197Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.586220758Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:13.586227060Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:13.586234097Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:13.586240997Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:13.586245295Z [err]      self.callable = self.load()
+2025-10-20T15:36:13.586251543Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:13.586254471Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:13.586259791Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:13.586262340Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:13.586267044Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:13.586272885Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.586286531Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:13.586291357Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:13.586296704Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.586302785Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:13.586307370Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:13.586313679Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.586319580Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:13.586324454Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:13.587854497Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:13.587866484Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:13.587886437Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.587893379Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:13.587901158Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:13.587908753Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.587915615Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:13.587923482Z [err]      raise e
+2025-10-20T15:36:13.587930500Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:13.587939939Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:13.587947064Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.587959645Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:13.587967747Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:13.587975442Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.587982494Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:13.587989991Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:13.588001661Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.588009114Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:13.588016127Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:13.588034018Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.591661547Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:13.591669366Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:13.591676264Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.591682020Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:13.591687974Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:13.591693679Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:13.591699942Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:13.591706127Z [err]      raise TypeError(
+2025-10-20T15:36:13.591711557Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:13.591717908Z [err]
+2025-10-20T15:36:13.591723842Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:13.591729553Z [err]  [2025-10-20 15:36:13 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:14.530154486Z [err]  [2025-10-20 15:36:14 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:14.530164856Z [err]  [2025-10-20 15:36:14 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:14.530174764Z [err]  [2025-10-20 15:36:14 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:16.472984940Z [err]  [2025-10-20 15:36:16 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:16.472992372Z [err]  [2025-10-20 15:36:16 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:16.472996871Z [err]  [2025-10-20 15:36:16 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:16.475852476Z [err]  [2025-10-20 15:36:16 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:17.357044863Z [err]  2025-10-20 15:36:17.212633: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:17.357049742Z [err]  2025-10-20 15:36:17.216537: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:17.357054293Z [err]  2025-10-20 15:36:17.262945: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:17.357058889Z [err]  2025-10-20 15:36:17.262991: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:17.357064119Z [err]  2025-10-20 15:36:17.264641: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:17.357071906Z [err]  2025-10-20 15:36:17.273309: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:17.357076996Z [err]  2025-10-20 15:36:17.273628: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:17.357082220Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:18.306506760Z [err]  2025-10-20 15:36:18.220422: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:19.299662502Z [err]  [2025-10-20 15:36:19 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:19.299668229Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:19.299672120Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:19.299676001Z [err]      return cls(**config)
+2025-10-20T15:36:19.299683031Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:19.299687592Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:19.299692195Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:19.299697238Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:19.299703049Z [err]      raise ValueError(
+2025-10-20T15:36:19.299707037Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:19.299711157Z [err]
+2025-10-20T15:36:19.299715150Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:19.299719433Z [err]
+2025-10-20T15:36:19.299727114Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:19.299731465Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:19.299735907Z [err]      worker.init_process()
+2025-10-20T15:36:19.299740780Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:19.299748474Z [err]      self.load_wsgi()
+2025-10-20T15:36:19.299753023Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:19.299757379Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:19.299761864Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.299766417Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:19.299878430Z [err]      self.callable = self.load()
+2025-10-20T15:36:19.299884600Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:19.299888274Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:19.299891932Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:19.299895554Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.299902443Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:19.299906449Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:19.299910452Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.299914312Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:19.299918982Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:19.299924802Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.299928388Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:19.299931979Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:19.299935493Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.299943838Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:19.299947417Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:19.299952844Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:19.299957392Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:19.299962780Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:19.299970152Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:19.300760009Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:19.300766679Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:19.300770638Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.300775426Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:19.300780664Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:19.300784996Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.300789436Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:19.300793406Z [err]      raise e
+2025-10-20T15:36:19.300797875Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:19.300802136Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:19.300806142Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.300810515Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:19.300814484Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:19.300818902Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.300823226Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:19.300828233Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:19.300832248Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.300836837Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:19.300841161Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:19.300844788Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.302069794Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:19.302076556Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:19.302083445Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.302094950Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:19.302102129Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:19.302109544Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:19.302117553Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:19.302124923Z [err]      raise TypeError(
+2025-10-20T15:36:19.302136693Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:19.302144375Z [err]
+2025-10-20T15:36:19.302151812Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:19.302158561Z [err]  [2025-10-20 15:36:19 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:19.784112748Z [err]  [2025-10-20 15:36:19 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:19.784123675Z [err]  [2025-10-20 15:36:19 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:19.784132453Z [err]  [2025-10-20 15:36:19 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:21.747337036Z [err]  [2025-10-20 15:36:21 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:21.747346135Z [err]  [2025-10-20 15:36:21 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:21.747353380Z [err]  [2025-10-20 15:36:21 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:21.749444188Z [err]  [2025-10-20 15:36:21 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:22.453847552Z [err]  2025-10-20 15:36:22.436157: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:22.453865451Z [err]  2025-10-20 15:36:22.440045: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:22.485340549Z [err]  2025-10-20 15:36:22.483852: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:22.485351849Z [err]  2025-10-20 15:36:22.483901: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:22.487258996Z [err]  2025-10-20 15:36:22.485445: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:22.495861308Z [err]  2025-10-20 15:36:22.494943: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:22.495869100Z [err]  2025-10-20 15:36:22.495253: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:22.495875552Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:23.432073974Z [err]  2025-10-20 15:36:23.427950: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:24.372508233Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:24.372518450Z [err]  [2025-10-20 15:36:24 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:24.372528092Z [err]      self.load_wsgi()
+2025-10-20T15:36:24.372532150Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:24.372543967Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:24.372545583Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:24.372547946Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:24.372560538Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.372573377Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:24.372606587Z [err]      return cls(**config)
+2025-10-20T15:36:24.372607916Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:24.372621196Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:24.372625236Z [err]
+2025-10-20T15:36:24.372629183Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:24.372641488Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:24.372641659Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:24.372646127Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:24.372656515Z [err]
+2025-10-20T15:36:24.372658943Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:24.372660763Z [err]      worker.init_process()
+2025-10-20T15:36:24.372671729Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:24.372677965Z [err]      raise ValueError(
+2025-10-20T15:36:24.376381637Z [err]      self.callable = self.load()
+2025-10-20T15:36:24.376386621Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:24.376391690Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:24.376396914Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:24.376402413Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.376407878Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:24.376413240Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:24.376418577Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.376424578Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:24.376429977Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:24.376434128Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.376438032Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:24.376442324Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:24.376446958Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.376451082Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:24.376455067Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:24.376458917Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:24.376463166Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:24.376468133Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:24.376473700Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:24.377678565Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:24.377688548Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:24.377696737Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.377703367Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:24.377709733Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:24.377716750Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.377725000Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:24.377732310Z [err]      raise e
+2025-10-20T15:36:24.377741240Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:24.377749097Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:24.377756648Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.377764535Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:24.377771747Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:24.377778154Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.377784684Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:24.377804513Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:24.377811025Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.377818057Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:24.377824873Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:24.377831244Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.379338852Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:24.379362703Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:24.379370341Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.379378341Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:24.379385849Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:24.379393554Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:24.379401208Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:24.379416404Z [err]      raise TypeError(
+2025-10-20T15:36:24.379422948Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:24.379431175Z [err]
+2025-10-20T15:36:24.379438009Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:24.379446204Z [err]  [2025-10-20 15:36:24 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:25.464712391Z [err]  [2025-10-20 15:36:25 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:25.464717386Z [err]  [2025-10-20 15:36:25 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:25.464722082Z [err]  [2025-10-20 15:36:25 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:27.437133718Z [err]  [2025-10-20 15:36:27 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:27.437295901Z [err]  [2025-10-20 15:36:27 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:27.437304340Z [err]  [2025-10-20 15:36:27 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:27.437309659Z [err]  [2025-10-20 15:36:27 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:27.848539757Z [err]  2025-10-20 15:36:27.847565: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:28.404662005Z [err]  2025-10-20 15:36:27.850680: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:28.404669213Z [err]  2025-10-20 15:36:27.895194: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:28.404676320Z [err]  2025-10-20 15:36:27.895256: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:28.404696132Z [err]  2025-10-20 15:36:27.896986: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:28.404705654Z [err]  2025-10-20 15:36:27.905732: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:28.404713171Z [err]  2025-10-20 15:36:27.906032: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:28.404724215Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:29.383668126Z [err]  2025-10-20 15:36:28.895220: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:30.447540455Z [err]      raise ValueError(
+2025-10-20T15:36:30.447550774Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:30.447557178Z [err]
+2025-10-20T15:36:30.447562453Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:30.447568435Z [err]
+2025-10-20T15:36:30.447569912Z [err]  [2025-10-20 15:36:29 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:30.447577519Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:30.447587169Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:30.447588395Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:30.447591381Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:30.447596353Z [err]      self.load_wsgi()
+2025-10-20T15:36:30.447601740Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:30.447603390Z [err]      worker.init_process()
+2025-10-20T15:36:30.447613574Z [err]      return cls(**config)
+2025-10-20T15:36:30.447613919Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:30.447623220Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:30.447629398Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:30.447642165Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:30.447645284Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:30.447659075Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:30.447664225Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.447670994Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:30.450510063Z [err]      self.callable = self.load()
+2025-10-20T15:36:30.450515273Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:30.450522149Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:30.450527757Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:30.450533578Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450540091Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:30.450546017Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:30.450551717Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450556557Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:30.450561575Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:30.450567835Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450573910Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:30.450579497Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:30.450583926Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450590265Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:30.450595818Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:30.450602701Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:30.450607821Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:30.450612573Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:30.450617427Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:30.450745370Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:30.450750442Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:30.450755600Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450760289Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:30.450764486Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:30.450768828Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450773484Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:30.450777949Z [err]      raise e
+2025-10-20T15:36:30.450781618Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:30.450786564Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:30.450791186Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450795739Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:30.450807085Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:30.450811923Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450816315Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:30.450820618Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:30.450826062Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.450830773Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:30.450835272Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:30.450839163Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.451733057Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:30.451740228Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:30.451745732Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.451750845Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:30.451755530Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:30.451763156Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:30.451769603Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:30.451773687Z [err]      raise TypeError(
+2025-10-20T15:36:30.451777698Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:30.451782096Z [err]
+2025-10-20T15:36:30.451786882Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:30.451792548Z [err]  [2025-10-20 15:36:29 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:30.818967114Z [err]  [2025-10-20 15:36:30 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:30.818976558Z [err]  [2025-10-20 15:36:30 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:30.818984083Z [err]  [2025-10-20 15:36:30 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:33.344588194Z [err]  [2025-10-20 15:36:32 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:33.344594862Z [err]  [2025-10-20 15:36:32 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:33.344603282Z [err]  [2025-10-20 15:36:32 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:33.344609635Z [err]  [2025-10-20 15:36:32 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:33.758788428Z [err]  2025-10-20 15:36:33.756635: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:33.765262901Z [err]  2025-10-20 15:36:33.760492: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:33.827699881Z [err]  2025-10-20 15:36:33.808012: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:33.827713497Z [err]  2025-10-20 15:36:33.808071: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:33.827723570Z [err]  2025-10-20 15:36:33.809962: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:33.827730205Z [err]  2025-10-20 15:36:33.819628: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:33.827737480Z [err]  2025-10-20 15:36:33.819980: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:33.827744367Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:35.322918251Z [err]  2025-10-20 15:36:34.889823: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:35.860343519Z [err]  [2025-10-20 15:36:35 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:35.860358969Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:35.860363402Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:35.860380282Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:35.860380838Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:35.860393519Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:35.860406620Z [err]      return cls(**config)
+2025-10-20T15:36:35.860410092Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:35.860419077Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:35.860427463Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:35.860436447Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:35.860443016Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:35.860455071Z [err]      raise ValueError(
+2025-10-20T15:36:35.860462522Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:35.860470088Z [err]
+2025-10-20T15:36:35.860476970Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:35.860484693Z [err]
+2025-10-20T15:36:35.860492733Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:35.860500139Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:35.860508312Z [err]      worker.init_process()
+2025-10-20T15:36:35.860517881Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:35.860526818Z [err]      self.load_wsgi()
+2025-10-20T15:36:36.485637029Z [err]      self.callable = self.load()
+2025-10-20T15:36:36.485642694Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:36.485647383Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:36.485651517Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:36.485655701Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.485660173Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:36.485665747Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:36.485669924Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.485676249Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:36.485681858Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:36.485687150Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.485692777Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:36.485699294Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:36.485706635Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.485712101Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:36.485717600Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:36.485723355Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:36.485729072Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:36.485734421Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:36.485741829Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:36.489840135Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:36.489844954Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:36.489850604Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.489855433Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:36.489859700Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:36.489866482Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.489877840Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:36.489882143Z [err]      raise e
+2025-10-20T15:36:36.489887618Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:36.489892121Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:36.489896599Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.489901357Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:36.489906453Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:36.489914548Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.489919669Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:36.489925288Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:36.489930755Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.489934791Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:36.489938946Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:36.489944995Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.490832897Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:36.490839715Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:36.490846955Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.490853639Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:36.490860574Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:36.490867267Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:36.490873942Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:36.490881384Z [err]      raise TypeError(
+2025-10-20T15:36:36.490890338Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:36.490896903Z [err]
+2025-10-20T15:36:36.490903663Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:36.490910533Z [err]  [2025-10-20 15:36:35 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:36.696499902Z [err]  [2025-10-20 15:36:36 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:36.698241133Z [err]  [2025-10-20 15:36:36 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:36.698248379Z [err]  [2025-10-20 15:36:36 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:39.523594903Z [err]  [2025-10-20 15:36:39 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:39.523600372Z [err]  [2025-10-20 15:36:39 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:39.523606136Z [err]  [2025-10-20 15:36:39 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:39.523611799Z [err]  [2025-10-20 15:36:39 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:40.475148455Z [err]  2025-10-20 15:36:40.175554: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:40.475152268Z [err]  2025-10-20 15:36:40.179357: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:40.475157022Z [err]  2025-10-20 15:36:40.228565: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:40.475163814Z [err]  2025-10-20 15:36:40.228633: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:40.475169374Z [err]  2025-10-20 15:36:40.230730: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:40.475174818Z [err]  2025-10-20 15:36:40.241359: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:40.475181204Z [err]  2025-10-20 15:36:40.241796: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:40.475187704Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:41.464729478Z [err]  2025-10-20 15:36:41.266048: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:42.382396861Z [err]      self.callable = self.load()
+2025-10-20T15:36:42.382401384Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:42.382405884Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:42.382409883Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:42.382413493Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.382417026Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:42.382421615Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:42.382426167Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.382430108Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:42.382433965Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:42.382438105Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.382442369Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:42.382446839Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:42.382450897Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.382454986Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:42.382459047Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:42.382463184Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:42.382468308Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:42.382472331Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:42.382476755Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:42.382793047Z [err]  [2025-10-20 15:36:42 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:42.382799587Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:42.382807551Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:42.382818094Z [err]      return cls(**config)
+2025-10-20T15:36:42.382825547Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:42.382834277Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:42.382841645Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:42.382849452Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:42.382857034Z [err]      raise ValueError(
+2025-10-20T15:36:42.382864559Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:42.382873865Z [err]
+2025-10-20T15:36:42.382881313Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:42.382888746Z [err]
+2025-10-20T15:36:42.382895879Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:42.382903352Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:42.382909671Z [err]      worker.init_process()
+2025-10-20T15:36:42.382916030Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:42.382924320Z [err]      self.load_wsgi()
+2025-10-20T15:36:42.382930488Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:42.382938161Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:42.382945508Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.382951876Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:42.383921011Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:42.383926405Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:42.383930688Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.383935568Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:42.383939519Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:42.383943832Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.383949048Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:42.383953537Z [err]      raise e
+2025-10-20T15:36:42.383958250Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:42.383963788Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:42.383967676Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.383971516Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:42.383975577Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:42.383980360Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.383985998Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:42.383989868Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:42.383993573Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.383997755Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:42.384001883Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:42.384006420Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.388063636Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:42.388070264Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:42.388076687Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.388082339Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:42.388087470Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:42.388092719Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:42.388097350Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:42.388101319Z [err]      raise TypeError(
+2025-10-20T15:36:42.388105427Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:42.388109981Z [err]
+2025-10-20T15:36:42.388114014Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:42.388118102Z [err]  [2025-10-20 15:36:42 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:43.458371100Z [err]  [2025-10-20 15:36:42 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:43.458377290Z [err]  [2025-10-20 15:36:42 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:43.458383944Z [err]  [2025-10-20 15:36:42 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:45.521220613Z [err]  [2025-10-20 15:36:45 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:45.521225218Z [err]  [2025-10-20 15:36:45 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:45.521229685Z [err]  [2025-10-20 15:36:45 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:45.521233838Z [err]  [2025-10-20 15:36:45 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:46.460720259Z [err]  2025-10-20 15:36:46.108799: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:46.460730355Z [err]  2025-10-20 15:36:46.111957: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:46.460738908Z [err]  2025-10-20 15:36:46.164493: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:46.460754516Z [err]  2025-10-20 15:36:46.164551: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:46.460762583Z [err]  2025-10-20 15:36:46.166928: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:46.460774072Z [err]  2025-10-20 15:36:46.179066: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:46.460781432Z [err]  2025-10-20 15:36:46.179452: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:46.460794074Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:47.443967518Z [err]  2025-10-20 15:36:47.337553: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:48.496174736Z [err]  [2025-10-20 15:36:48 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:48.496181349Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:48.496186347Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:48.496193041Z [err]      return cls(**config)
+2025-10-20T15:36:48.496198950Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:48.496203857Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:48.496209967Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:48.496215499Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:48.496220216Z [err]      raise ValueError(
+2025-10-20T15:36:48.496224756Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:48.496229198Z [err]
+2025-10-20T15:36:48.496235708Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:48.496269830Z [err]
+2025-10-20T15:36:48.496278810Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:48.496285124Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:48.496290577Z [err]      worker.init_process()
+2025-10-20T15:36:48.496528229Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:48.496535396Z [err]      self.load_wsgi()
+2025-10-20T15:36:48.496539980Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:48.496544926Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:48.496550660Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.496555173Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:48.498858590Z [err]      self.callable = self.load()
+2025-10-20T15:36:48.498863655Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:48.498869082Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:48.498875608Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:48.498880278Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.498885100Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:48.498890194Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:48.498894181Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.498898054Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:48.498903282Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:48.498908303Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.498912866Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:48.498917289Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:48.498922896Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.498928210Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:48.498932291Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:48.498936823Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:48.498940803Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:48.498944815Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:48.498949262Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:48.499048495Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:48.499052944Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:48.499057107Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.499061375Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:48.499065589Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:48.499069743Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.499075416Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:48.499080029Z [err]      raise e
+2025-10-20T15:36:48.499085375Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:48.499089527Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:48.499094021Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.499098107Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:48.499101990Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:48.499107207Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.499111230Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:48.499115152Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:48.499119002Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.499123331Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:48.499128011Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:48.499132352Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.500603935Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:48.500609878Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:48.500614767Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.500619436Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:48.500623934Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:48.500628560Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:48.500633323Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:48.500637530Z [err]      raise TypeError(
+2025-10-20T15:36:48.500642485Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:48.500646569Z [err]
+2025-10-20T15:36:48.500651077Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:48.500655654Z [err]  [2025-10-20 15:36:48 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:49.501754408Z [err]  [2025-10-20 15:36:49 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:49.501758918Z [err]  [2025-10-20 15:36:49 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:49.501763035Z [err]  [2025-10-20 15:36:49 +0000] [1] [ERROR] Reason: Worker failed to boot.
+2025-10-20T15:36:52.754950224Z [err]  [2025-10-20 15:36:52 +0000] [1] [INFO] Starting gunicorn 21.2.0
+2025-10-20T15:36:52.754962074Z [err]  [2025-10-20 15:36:52 +0000] [1] [INFO] Listening at: http://0.0.0.0:8080 (1)
+2025-10-20T15:36:52.754968811Z [err]  [2025-10-20 15:36:52 +0000] [1] [INFO] Using worker: sync
+2025-10-20T15:36:52.756112936Z [err]  [2025-10-20 15:36:52 +0000] [2] [INFO] Booting worker with pid: 2
+2025-10-20T15:36:53.593869832Z [err]  To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX_VNNI AMX_TILE AMX_INT8 AMX_BF16 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+2025-10-20T15:36:53.593938477Z [err]  2025-10-20 15:36:53.520964: I tensorflow/core/util/port.cc:113] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2025-10-20T15:36:53.593945239Z [err]  2025-10-20 15:36:53.524456: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:53.593945723Z [err]  2025-10-20 15:36:53.575302: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9261] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2025-10-20T15:36:53.593958014Z [err]  2025-10-20 15:36:53.575356: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2025-10-20T15:36:53.593965331Z [err]  2025-10-20 15:36:53.577218: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1515] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2025-10-20T15:36:53.593971974Z [err]  2025-10-20 15:36:53.586662: I external/local_tsl/tsl/cuda/cudart_stub.cc:31] Could not find cuda drivers on your machine, GPU will not be used.
+2025-10-20T15:36:53.593979204Z [err]  2025-10-20 15:36:53.586991: I tensorflow/core/platform/cpu_feature_guard.cc:182] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+2025-10-20T15:36:54.629906645Z [err]  2025-10-20 15:36:54.627474: W tensorflow/compiler/tf2tensorrt/utils/py_utils.cc:38] TF-TRT Warning: Could not find TensorRT
+2025-10-20T15:36:55.539364375Z [err]      self.callable = self.load()
+2025-10-20T15:36:55.539373249Z [err]                      ^^^^^^^^^^^
+2025-10-20T15:36:55.539392145Z [err]    File "<frozen importlib._bootstrap>", line 1149, in _find_and_load_unlocked
+2025-10-20T15:36:55.539397710Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.539402437Z [err]    File "<frozen importlib._bootstrap>", line 690, in _load_unlocked
+2025-10-20T15:36:55.539410055Z [err]    File "<frozen importlib._bootstrap_external>", line 940, in exec_module
+2025-10-20T15:36:55.539420508Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/util.py", line 371, in import_app
+2025-10-20T15:36:55.539424882Z [err]    File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+2025-10-20T15:36:55.539425821Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.539431870Z [err]      mod = importlib.import_module(module)
+2025-10-20T15:36:55.539438498Z [err]    File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+2025-10-20T15:36:55.539440056Z [err]            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.539446139Z [err]    File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+2025-10-20T15:36:55.539448432Z [err]    File "/mise/installs/python/3.11.0/lib/python3.11/importlib/__init__.py", line 126, in import_module
+2025-10-20T15:36:55.539455127Z [err]      return _bootstrap._gcd_import(name[level:], package, level)
+2025-10-20T15:36:55.539474559Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 58, in load
+2025-10-20T15:36:55.539486340Z [err]      return self.load_wsgiapp()
+2025-10-20T15:36:55.539495283Z [err]             ^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.539505678Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/wsgiapp.py", line 48, in load_wsgiapp
+2025-10-20T15:36:55.539508898Z [err]  [2025-10-20 15:36:55 +0000] [2] [ERROR] Exception in worker process
+2025-10-20T15:36:55.539515118Z [err]      return util.import_app(self.app_uri)
+2025-10-20T15:36:55.539516505Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:55.539522874Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 868, in from_config
+2025-10-20T15:36:55.539526988Z [err]      return cls(**config)
+2025-10-20T15:36:55.539531673Z [err]             ^^^^^^^^^^^^^
+2025-10-20T15:36:55.539537345Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/utils/traceback_utils.py", line 70, in error_handler
+2025-10-20T15:36:55.539542155Z [err]      raise e.with_traceback(filtered_tb) from None
+2025-10-20T15:36:55.539546301Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/input_layer.py", line 153, in __init__
+2025-10-20T15:36:55.539550128Z [err]      raise ValueError(
+2025-10-20T15:36:55.539556347Z [err]  ValueError: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:55.539563383Z [err]
+2025-10-20T15:36:55.539568567Z [err]  During handling of the above exception, another exception occurred:
+2025-10-20T15:36:55.539573039Z [err]
+2025-10-20T15:36:55.539577309Z [err]  Traceback (most recent call last):
+2025-10-20T15:36:55.539581115Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/arbiter.py", line 609, in spawn_worker
+2025-10-20T15:36:55.539585370Z [err]      worker.init_process()
+2025-10-20T15:36:55.539594436Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 134, in init_process
+2025-10-20T15:36:55.539599007Z [err]      self.load_wsgi()
+2025-10-20T15:36:55.539606412Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/workers/base.py", line 146, in load_wsgi
+2025-10-20T15:36:55.539610964Z [err]      self.wsgi = self.app.wsgi()
+2025-10-20T15:36:55.539615485Z [err]                  ^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.539620831Z [err]    File "/app/.venv/lib/python3.11/site-packages/gunicorn/app/base.py", line 67, in wsgi
+2025-10-20T15:36:55.543471520Z [err]    File "/app/api.py", line 19, in <module>
+2025-10-20T15:36:55.543477475Z [err]      model = keras.models.load_model(model_path)
+2025-10-20T15:36:55.543483219Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543489014Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_api.py", line 254, in load_model
+2025-10-20T15:36:55.543495473Z [err]      return saving_lib.load_model(
+2025-10-20T15:36:55.543502130Z [err]             ^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543508497Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 281, in load_model
+2025-10-20T15:36:55.543515216Z [err]      raise e
+2025-10-20T15:36:55.543524005Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/saving_lib.py", line 246, in load_model
+2025-10-20T15:36:55.543530854Z [err]      model = deserialize_keras_object(
+2025-10-20T15:36:55.543537778Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543546699Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:55.543552543Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:55.543558153Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543563806Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/sequential.py", line 466, in from_config
+2025-10-20T15:36:55.543571207Z [err]      layer = layer_module.deserialize(
+2025-10-20T15:36:55.543577231Z [err]              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543582904Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/layers/serialization.py", line 276, in deserialize
+2025-10-20T15:36:55.543589166Z [err]      return serialization_lib.deserialize_keras_object(
+2025-10-20T15:36:55.543595528Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543731122Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 609, in deserialize_keras_object
+2025-10-20T15:36:55.543738055Z [err]      return deserialize_keras_object(
+2025-10-20T15:36:55.543742847Z [err]             ^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543748914Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/saving/serialization_lib.py", line 728, in deserialize_keras_object
+2025-10-20T15:36:55.543754956Z [err]      instance = cls.from_config(inner_config)
+2025-10-20T15:36:55.543761245Z [err]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2025-10-20T15:36:55.543767556Z [err]    File "/app/.venv/lib/python3.11/site-packages/keras/src/engine/base_layer.py", line 870, in from_config
+2025-10-20T15:36:55.543773196Z [err]      raise TypeError(
+2025-10-20T15:36:55.543778388Z [err]  TypeError: Error when deserializing class 'InputLayer' using config={'batch_shape': [None, 128, 128, 3], 'dtype': 'float32', 'sparse': False, 'ragged': False, 'name': 'input_layer'}.
+2025-10-20T15:36:55.543786846Z [err]
+2025-10-20T15:36:55.543792197Z [err]  Exception encountered: Unrecognized keyword arguments: ['batch_shape']
+2025-10-20T15:36:55.543798207Z [err]  [2025-10-20 15:36:55 +0000] [2] [INFO] Worker exiting (pid: 2)
+2025-10-20T15:36:56.504076268Z [err]  [2025-10-20 15:36:56 +0000] [1] [ERROR] Worker (pid:2) exited with code 3
+2025-10-20T15:36:56.504081190Z [err]  [2025-10-20 15:36:56 +0000] [1] [ERROR] Shutting down: Master
+2025-10-20T15:36:56.504085364Z [err]  [2025-10-20 15:36:56 +0000] [1] [ERROR] Reason: Worker failed to boot.
