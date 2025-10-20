@@ -14,9 +14,35 @@ CORS(app)
 # กำหนด path ของโฟลเดอร์ปัจจุบัน
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
+# ฟังก์ชันสำหรับโหลด model แบบ compatible
+def load_model_safe(model_path):
+    """โหลด model โดยรองรับทั้ง Keras 2.x และ 3.x"""
+    try:
+        # พยายามโหลดแบบปกติก่อน
+        return keras.models.load_model(model_path)
+    except (TypeError, ValueError) as e:
+        if 'batch_shape' in str(e) or 'Unrecognized keyword arguments' in str(e):
+            print("⚠️  Detected legacy model format, trying compatibility mode...")
+            try:
+                # ลองใช้ tf.keras แทน
+                return tf.keras.models.load_model(model_path, compile=False)
+            except Exception as e2:
+                print(f"❌ Failed to load with tf.keras: {e2}")
+                # ลองโหลดแบบ SavedModel format
+                try:
+                    savedmodel_path = os.path.join(BASE_DIR, "exported", "savedmodel")
+                    if os.path.exists(savedmodel_path):
+                        print(f"Trying SavedModel format from: {savedmodel_path}")
+                        return tf.keras.models.load_model(savedmodel_path)
+                except Exception as e3:
+                    print(f"❌ Failed to load SavedModel: {e3}")
+                raise e
+        else:
+            raise e
+
 # โหลดโมเดล
 model_path = os.path.join(BASE_DIR, "thai_food_model.keras")
-model = keras.models.load_model(model_path)
+model = load_model_safe(model_path)
 print("✅ Model loaded successfully!")
 print(f"Input shape: {model.input_shape}")
 print(f"Output shape: {model.output_shape}")
